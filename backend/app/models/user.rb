@@ -10,4 +10,6 @@ class User < ApplicationRecord
   def jwt_payload
     super.merge('foo' => 'bar')
   end
+
+  has_many :journals, dependent: :destroy
 end
